@@ -1,21 +1,11 @@
+package EmailCarbonFootprintCalculator;
+
 import java.util.Scanner;
 
-public class CalculateCarbonFootPrint {
-    
-    public static float calculateInboxCarbonFootprint(int inboxEmailCount) {
-        return (4.0f * inboxEmailCount) / 1000;
-    }
-
-    public static float calculateSentCarbonFootprint(int sentEmailCount) {
-        return (4.0f * sentEmailCount) / 1000;
-    }
-
-    public static float calculateSpamCarbonFootprint(int spamEmailCount) {
-        return (0.4f * spamEmailCount) / 1000;
-    }
-
+public class EmailCarbonFootprintApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        EmailCarbonFootprintCalculator calculator = new EmailCarbonFootprintCalculator();
 
         while (true) {
             System.out.print("Enter email (or 'exit' to quit): ");
@@ -33,9 +23,11 @@ public class CalculateCarbonFootPrint {
             System.out.print("No. of mail in Spam: ");
             int spamEmailCount = scanner.nextInt();
 
-            float inboxCarbonFootprint = calculateInboxCarbonFootprint(inboxEmailCount);
-            float sentCarbonFootprint = calculateSentCarbonFootprint(sentEmailCount);
-            float spamCarbonFootprint = calculateSpamCarbonFootprint(spamEmailCount);
+            scanner.nextLine();
+
+            float inboxCarbonFootprint = calculator.calculateInboxCarbonFootprint(inboxEmailCount);
+            float sentCarbonFootprint = calculator.calculateSentCarbonFootprint(sentEmailCount);
+            float spamCarbonFootprint = calculator.calculateSpamCarbonFootprint(spamEmailCount);
 
             float totalCarbonFootprint = inboxCarbonFootprint + sentCarbonFootprint + spamCarbonFootprint;
 
