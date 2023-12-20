@@ -2,10 +2,10 @@ package Assignment_2;
 
 public class Data {
     int firstNumber;
-    double decimalNumber;
+    double secondNumber;
     String text;
 
-    public void addRealNumbers(int firstNumber, int secondNumber) {
+    public void addRealNumbers(int firstOperand, int secondOperand) {
         int result = firstNumber + secondNumber;
         System.out.println("Result: " + result);
     }
